@@ -1,0 +1,134 @@
+<% include ../partials/boilerplate.ejs %>
+
+<script src='/static/js/head.js'></script>
+<% if (tone.document_tone) { %>
+
+
+<% let oldAngerValue = JSON.stringify(tone.document_tone.tone_categories[0].tones[0].score, null, 2) %>
+<% let oldDisgustValue = JSON.stringify(tone.document_tone.tone_categories[0].tones[1].score, null, 2) %>
+<% let oldFearValue = JSON.stringify(tone.document_tone.tone_categories[0].tones[2].score, null, 2) %>
+<% let oldJoyValue = JSON.stringify(tone.document_tone.tone_categories[0].tones[3].score, null, 2) %>
+<% let oldSadnessValue = JSON.stringify(tone.document_tone.tone_categories[0].tones[4].score, null, 2) %>
+
+
+<%  function changePieCharts100(value) {  %>
+  <%  return ((value * 100) / 1); %>
+<%  } %>
+
+<% let angerValue = changePieCharts100(oldAngerValue) %>
+<% let disgustValue = changePieCharts100(oldDisgustValue) %>
+<% let fearValue = changePieCharts100(oldFearValue) %>
+<% let joyValue = changePieCharts100(oldJoyValue) %>
+<% let sadnessValue = changePieCharts100(oldSadnessValue) %>
+
+
+<span id='angerValue' data='<%= angerValue %>'> </span>
+<span id='disgustValue' data='<%= disgustValue %>'> </span>
+<span id='fearValue' data='<%= fearValue %>'> </span>
+<span id='joyValue' data='<%= joyValue %>'> </span>
+<span id='sadnessValue' data='<%= sadnessValue %>'> </span>
+
+
+
+  <header>
+Results
+  </header>
+  <div class="whole">
+    <div class="row-one">
+      
+  <div class="top-left">
+
+    <!-- Pie Chart  -->
+
+        <div class="chart">
+          <div class="joy-percentage" data-percent="<%= joyValue %>">
+            <span>100</span><sup>%</sup>
+          </div>
+          <div class="label">Joy</div>
+          </div>
+        
+          
+        <div class="chart">
+          <div class="sadness-percentage" data-percent="<%= sadnessValue %>">
+            <span>100</span><sup>%</sup>
+          </div>
+          <div class="label">Sadness</div>
+          </div>
+          
+        <div class="chart">
+          <div class="fear-percentage" data-percent="<%= fearValue %>">
+            <span>100</span><sup>%</sup>
+          </div>
+          <div class="label">Fear</div>
+          </div>
+          
+          <div class="pie-row-two">
+            
+        <div class="chart">
+          <div class="anger-percentage" data-percent='<%= angerValue %>'>
+            <span>100</span><sup>%</sup>
+          </div>
+          <div class="label">Anger</div>
+          </div>
+          
+          
+        <div class="chart">
+          <div class="disgust-percentage" data-percent="<%= disgustValue %>">
+            <span>100</span><sup>%</sup>
+          </div>
+          <div class="label">Disgust</div>
+          </div>
+          </div>
+    
+      </div>
+
+<!--   <div class="top-right"></div>
+   -->
+      </div>
+    
+<!-- <div class="row-two"> -->
+  <div class="left-bottom">
+    
+     <!-- Radar Chart -->
+  <div class="chart-demo">
+    <canvas id="emotionRadarChart" width="640" height="400"></canvas>
+  </div> 
+    </div>
+  
+<!--   <div class="middle-bottom"></div>
+  
+  <div class="right-bottom"></div>
+  
+  </div>  -->
+    </div>
+  
+  
+
+
+
+
+<form method='POST' action='/'>
+<input name='name' type="text" placeholder='Name'>
+  <input name='urllink' type='hidden' value='<%= text %>'/>
+  <input name='anger' type='hidden' value='<%= angerValue %>'/>
+  <input name='disgust' type='hidden' value='<%= disgustValue %>'/>
+  <input name='fear' type='hidden' value='<%= fearValue %>'/>
+  <input name='joy' type='hidden' value='<%= joyValue %>'/>
+  <input name='sadness' type='hidden' value='<%= sadnessValue %>'/>
+  
+   <input type='submit' value='Save This!' />
+  
+ 
+</form>
+
+<% } else { %>
+<pre class="data"><%=  JSON.stringify(tone, null, 2) %></pre>
+<% } %>
+<promise>
+<fetch>
+
+
+
+<% include ../partials/end.ejs %>
+
+   

@@ -1,0 +1,22 @@
+<% include ../partials/boilerplate %>
+sadas
+  <div class='single-webmood'>
+    <div class='meta'>
+   <div> name: <%= webmood.name %> </div>
+   <div> urllink: <%= webmood.urllink %> </div>
+      <div> anger: <%= webmood.anger %> </div>
+      <div> disgust: <%= webmood.disgust %> </div>
+      <div> fear: <%= webmood.fear %> </div>
+      <div> joy: <%= webmood.joy %> </div>
+      <div> sadness: <%= webmood.sadness %> </div>
+    </div>
+  </div>
+
+  <a href='/webmood/edit/<%= webmood.id %>'>Edit webmood</a>
+      <form method='POST' action='/webmood/<%= webmood.id %>?_method=DELETE'>
+        <input type='submit' value='Delete it!' />
+      </form>
+
+  <a href='/'>Return to webmood index</a>
+
+<% include ../partials/end %>

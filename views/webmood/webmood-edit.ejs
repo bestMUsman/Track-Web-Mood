@@ -1,0 +1,9 @@
+<% include ../partials/boilerplate %>
+
+<form method='POST' action='/webmood/<%= id %>?_method=PUT'>
+  <input name='name' type='text' value='<%= webmood.name %>' />
+ 
+  <input type='submit' value='Edit it!' />
+</form>
+<script src="/static/js/main.js"></script>
+<% include ../partials/end %>

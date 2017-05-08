@@ -1,0 +1,279 @@
+ /*============= 
+/*  Pie chart  */
+ /* ============= */
+
+ .chart {
+   display: inline-block;
+   width: 110px;
+   margin: 40px auto 20px;
+   padding: 0 10px;
+ }
+
+ .easyPieChart {
+   position: relative;
+   text-align: center;
+ }
+
+ .easyPieChart canvas {
+   position: absolute;
+   top: 0;
+   left: 0;
+ }
+
+ .percentage,
+ .label {
+   margin-bottom: 0.5em;
+   text-align: center;
+   font-weight: 100;
+ }
+
+ .percentage {
+   font-size: 17px;
+ }
+
+ sup {
+   top: -0.2em;
+   margin-left: 1px;
+ }
+ /* ============= */
+ /*  Boxes */
+ /* ============= */
+ /*header {
+  height: 50px;
+  width: 100%;
+  background: gray;
+}*/
+ /*
+.whole {
+  background: blue;
+  min-width: 100%;
+  text-align:center;
+ 
+}*/
+
+
+
+ .top-right {
+   width: 300px;
+   height: 200px;
+   background: green;
+   display: inline-block;
+ }
+
+ .middle-bottom {
+   background: green;
+   width: 100%;
+   height: 200px;
+   display: inline-block;
+ }
+
+ .right-bottom {
+   height: 200px;
+   width: 300px;
+   background: gray;
+   display: inline-block;
+ }
+ /* Contact Form */
+
+ .index-cf:before,
+ .index-cf:after {
+   content: "";
+   display: table;
+ }
+
+ .index-cf:after {
+   clear: both;
+ }
+
+ .index-cf {
+   zoom: 1;
+ }
+ /*-------------------------------------*/
+
+ .index-cf input {
+   width: 88.45%;
+   height: 20px;
+   padding: 10px 5px;
+   float: left;
+   font: bold 15px 'lucida sans', 'trebuchet MS', 'Tahoma';
+   border: 0;
+   background: #eee;
+   -moz-border-radius: 3px 0 0 3px;
+   -webkit-border-radius: 3px 0 0 3px;
+   border-radius: 3px 0 0 3px;
+ }
+
+ .index-cf input:focus {
+   outline: 0;
+   background: #fff;
+   -moz-box-shadow: 0 0 2px rgba(0, 0, 0, .8) inset;
+   -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, .8) inset;
+   box-shadow: 0 0 2px rgba(0, 0, 0, .8) inset;
+ }
+
+ .index-cf input::-webkit-input-placeholder {
+   color: #999;
+   font-weight: normal;
+   font-style: italic;
+ }
+
+ .index-cf input:-moz-placeholder {
+   color: #999;
+   font-weight: normal;
+   font-style: italic;
+ }
+
+ .index-cf input:-ms-input-placeholder {
+   color: #999;
+   font-weight: normal;
+   font-style: italic;
+ }
+
+ .index-cf button {
+   overflow: visible;
+   position: relative;
+   float: right;
+   border: 0;
+   padding: 0;
+   cursor: pointer;
+   height: 40px;
+   width: 110px;
+   font: bold 15px/40px 'lucida sans', 'trebuchet MS', 'Tahoma';
+   color: #fff;
+   text-transform: uppercase;
+   background: #d83c3c;
+   -moz-border-radius: 0 3px 3px 0;
+   -webkit-border-radius: 0 3px 3px 0;
+   border-radius: 0 3px 3px 0;
+   text-shadow: 0 -1px 0 rgba(0, 0, 0, .3);
+ }
+
+ .index-cf button:hover {
+   background: #e54040;
+ }
+
+ .index-cf button:active,
+ .index-cf button:focus {
+   background: #c42f2f;
+ }
+
+ .index-cf button:before {
+   content: '';
+   position: absolute;
+   border-width: 8px 8px 8px 0;
+   border-style: solid solid solid none;
+   border-color: transparent #d83c3c transparent;
+   top: 12px;
+   left: -6px;
+ }
+
+ .index-cf button:hover:before {
+   border-right-color: #e54040;
+ }
+
+ .index-cf button:focus:before {
+   border-right-color: #c42f2f;
+ }
+
+ .index-cf button::-moz-focus-inner {
+   border: 0;
+   padding: 0;
+ }
+
+
+ /* new-style*/
+
+
+ body {
+    background: url('http://www.free-patterns.info/wp-content/uploads/2013/03/gray-spray-wall-ver-3.jpg');
+}
+
+header {
+    width: 100%;
+    color: #fff;
+    background-color: #3356b7 ;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .15)) ;
+    height: 80px ;
+    text-align: center;
+    line-height: 80px;
+    font-family: "Niconne", cursive;
+    font-size: 30px;
+}
+
+header * {
+    color: white;
+}
+
+.searchContainer {
+    height: 100px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.resultWholeBoxContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.resultWholeBox {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+.resultEachBox {
+    display: inline-block ;
+    background: gray ;
+    margin: 5px ;
+    width: 350px ;
+    height: 257px ;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) ;
+    border-radius: 15px ;
+    font-size: 20px ;
+    border: 1px solid #3356b7;
+}
+
+.index-cf {
+    width: 73.5%;
+    padding: 22px;
+    margin: auto;
+    background: rgba(0,0,0,.2);
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -moz-box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
+    box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
+}
+
+.resultBoxHeader {
+    background: #3356b7 ;
+    font-family: cursive;
+    color: white;
+    height: 49px ;
+    width: 100%;
+    letter-spacing: 1.2px;
+    line-height: 49px;
+    text-align: center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.top-left {
+    background: black;
+    color: white;
+    height: 300px;
+    width: 700px;
+    display: inline-block;
+    margin: 25px;
+    border-radius: 35px;
+}
+
+.left-bottom {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    background: black;
+    color: white;
+}
+

@@ -1,0 +1,63 @@
+<% include ../partials/boilerplate %>
+
+
+
+
+  <header>
+
+    <a href='/webmood'>See all WebMood</a>
+    <a href='/auth/register'>Register</a>
+    <a href='/auth/login'>Log in</a>
+    <a href='/auth/logout'>Log out</a>
+
+  </header>
+
+
+
+
+  <div class="searchContainer">
+
+    <form action="/getmood" class='index-cf'>
+      <input type="text" id='textBox' class='textBox' name='text' placeHolder='Type Your Text Here'>
+      <button type="submit" id='searchBttn'>Search</button>
+    </form>
+
+  </div>
+  <div class="resultWholeBoxContainer">
+    <div class="resultWholeBox">
+
+      <% webmood.forEach(function(webmood) { %>
+        <div class="resultEachBox">
+          <div class='resultBoxHeader'> Name:
+            <%= webmood.name %>
+          </div>
+
+          <a href='/getmood?text=<%= webmood.urllink %>' class='urlLink'>
+            <div>this is id:
+              <%= webmood.id %>
+            </div>
+            <div> urllink:
+              <%= webmood.urllink %>
+            </div>
+
+
+
+            <form method='POST' action='/webmood/<%= webmood.id %>?_method=DELETE'>
+              <input type='submit' value='Delete it!' />
+            </form>
+
+            <form method='POST' action='/webmood/<%= webmood.id %>?_method=PUT'>
+              <input name='name' type='text' value='<%= webmood.name %>' />
+              <input name='urllink' type='hidden' value='<%= webmood.urllink %>' />
+
+              <input type='submit' value='Edit it!' />
+            </form>
+
+        </div>
+        </a>
+
+        <% }) %>
+
+    </div>
+  </div>
+  <% include ../partials/end %>

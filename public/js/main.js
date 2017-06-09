@@ -3,6 +3,7 @@
 // ======================================================
 console.log('woking');
 
+
 // function changePieChartValues(joy, sadness, fear, anger, disgust) {
 //  $(".joy-percentage").attr({
 //         "data-percent" : joy
@@ -261,3 +262,4 @@ var emotionRadar = new Chart(emotion).Radar(emotionRadarData, empotionRadarOptio
 // Radar Chart Ends
 
 // console.log(JSON.stringify(tone.document_tone.tone_categories[0].tones, null, 2));
+

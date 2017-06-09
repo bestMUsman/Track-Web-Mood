@@ -1,9 +1,37 @@
-<% include ../partials/boilerplate %>
+<% include ../partials/bootstrap_boilerplate %>
 
-<form method="POST" action="/auth/login">
-  <input name='username' type="text" placeholder='username' />
-  <input name='password' type="text" placeholder='password' />
-  <input type="submit" value="Log in" />
-</form>
 
+<div class="login">
+<div class="loginContainer">
+
+
+<div class="panel panel-primary"> 
+<div class="panel-heading"> 
+<h3 class="panel-title">Log In To Your Account</h3> 
+</div> 
+    <div class="well">
+        <form id="loginForm" method="POST" action="/auth/login" novalidate="novalidate">
+            <div class="form-group">
+                <label for="username" class="control-label">Username</label>
+                <input type="text" class="form-control" id="username" name="username" value="" required="" title="Please enter you username" placeholder="example@gmail.com">
+                <span class="help-block"></span>
+            </div>
+            <div class="form-group">
+                <label for="password" class="control-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password" value="" required="" title="Please enter your password">
+                <span class="help-block"></span>
+            </div>
+            <div id="loginErrorMsg" class="alert alert-error hide">Wrong username og password</div>
+            <button type="submit" class="btn btn-success btn-block">Login</button>
+        </form>
+    </div>
+    </div>
+</div>
+</div>
 <% include ../partials/end %>
+
+
+
+
+
+

@@ -6,7 +6,7 @@ const controller = {};
 controller.create = (req, res, next) => {
   const salt = bcrypt.genSaltSync();
   const hash = bcrypt.hashSync(req.body.password, salt);
-
+ 
   User.create({
     username: req.body.username,
     first_name: req.body.first_name,

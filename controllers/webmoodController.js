@@ -3,11 +3,13 @@ const Webmood = require('../models/webmood');
 const controller = {};
 
 controller.index = (req, res) => {
+let userInfo = req.user;
   Webmood.findAll()
     .then(webmood => {
       res.render('webmood/webmood-index', {
         message: 'this is working',
         webmood: webmood,
+        user: userInfo,
       });
     })
     .catch(err => {

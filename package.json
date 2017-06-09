@@ -21,6 +21,7 @@
     "ember-cli-easypiechart": "^0.1.2",
     "express": "^4.15.2",
     "express-session": "^1.15.2",
+    "html-to-text": "^3.3.0",
     "jquery": "^3.2.1",
     "method-override": "^2.3.8",
     "morgan": "^1.8.1",

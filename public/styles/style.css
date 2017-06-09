@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Courgette|Kumar+One|Roboto');
+ 
  /*============= 
 /*  Pie chart  */
  /* ============= */
@@ -101,6 +103,7 @@
    -moz-border-radius: 3px 0 0 3px;
    -webkit-border-radius: 3px 0 0 3px;
    border-radius: 3px 0 0 3px;
+       width: 88.70%;
  }
 
  .index-cf input:focus {
@@ -184,30 +187,168 @@
  /* new-style*/
 
 
- body {
-    background: url('http://www.free-patterns.info/wp-content/uploads/2013/03/gray-spray-wall-ver-3.jpg');
+
+.loginContainer {
+    top: 16vh;
+    display: block;
+    width: 400px;
+    margin: auto;
+    position: relative;
+    zoom: 1.3;
 }
 
-header {
+.registerContainer {
+    top: 11vh;
+    display: block;
+    width: 400px;
+    margin: auto;
+    position: relative;
+    zoom: 1.3;
+}
+
+.profileContainer {
+    top: 13vh;
+    position: relative;
+    zoom: 1.23;
+    margin: auto;
+}
+
+.profileContainer .panel-title {
+    text-transform: uppercase;
+}
+
+.panel-primary {
+    height: 200px;
+}
+
+.not_found img {
+    height: 100%;
     width: 100%;
-    color: #fff;
-    background-color: #3356b7 ;
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .15)) ;
-    height: 80px ;
-    text-align: center;
-    line-height: 80px;
-    font-family: "Niconne", cursive;
-    font-size: 30px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
 }
 
-header * {
+.divider {
+    display: table;
+    font-size: 24px;
+    margin: 40px auto;
+    text-align: center;
+    width: 75%;
+    margin-top: 55px;
+}
+
+.divider span {
+    display: table-cell;
+    position: relative;
+}
+
+.divider span:first-child {
+    background-image: linear-gradient(90deg, transparent, #000);
+}
+
+.divider span:first-child, .divider span:last-child {
+    -moz-background-size: 100% 2px;
+    background-position: 0 0, 0 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 2px;
+    top: 13px;
+    width: 50%;
+}
+
+.divider span:last-child {
+    background-image: linear-gradient(90deg, #000, transparent);
+}
+
+.divider span:nth-child(2) {
+    color: white;
+    padding: 0px 25px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    width: auto;
+}
+
+.index-cf {
+    zoom: 1;
+}
+
+.index-cf button {
+    -moz-border-radius: 0 3px 3px 0;
+    -webkit-border-radius: 0 3px 3px 0;
+    background: #d83c3c;
+    border: 0;
+    border-radius: 0 3px 3px 0;
+    color: #fff;
+    cursor: pointer;
+    float: right;
+    font: bold 15px/40px 'lucida sans', 'trebuchet MS', 'Tahoma';
+    height: 40px;
+    overflow: visible;
+    padding: 0;
+    position: relative;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, .3);
+    text-transform: uppercase;
+    width: 110px;
+}
+
+.left-bottom {
+    color: white;
+    display: inline-block;
+    height: 500px;
+    position: relative;
+    top: 0px;
+    width: 30%;
+}
+
+.links a {
+    padding: 15px;
+    padding-bottom: 20px;
+    padding-top: 30px;
+    transition: 1s;
+    color: white;
+    line-height: 25px;
+}
+
+.links a:first-child {
+    margin-right: -4px;
+}
+
+.links a:hover {
+    background-color: #2f2f30;
     color: white;
 }
 
-.searchContainer {
-    height: 100px;
+.resultBoxHeader {
+    background: #333333 ;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    color: white;
+    font-family: cursive;
+    height: 49px ;
+    letter-spacing: 1.2px;
+    line-height: 49px;
     text-align: center;
-    margin-top: 50px;
+    width: 100%;
+}
+
+.resultEachBox {
+    background: #eeeeee ;
+    border: 1px solid #3356b7;
+    border-radius: 18px ;
+    box-shadow: 0px 0px 16px 1px rgba(0,0,0,0.75);
+    display: inline-block ;
+    font-size: 20px ;
+    height: 257px ;
+    margin: 5px ;
+    width: 350px ;
+    -webkit-box-shadow: 0px 0px 16px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 16px 1px rgba(0,0,0,0.75);
+}
+
+.resultWholeBox {
+    margin: auto;
+    text-align: center;
+    width: 90%;
 }
 
 .resultWholeBoxContainer {
@@ -215,73 +356,61 @@ header * {
     justify-content: center;
 }
 
-.resultWholeBox {
-    width: 90%;
-    margin: auto;
+.searchContainer {
     text-align: center;
-}
-
-.resultEachBox {
-    display: inline-block ;
-    background: gray ;
-    margin: 5px ;
-    width: 350px ;
-    height: 257px ;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) ;
-    border-radius: 15px ;
-    font-size: 20px ;
-    border: 1px solid #3356b7;
-}
-
-.index-cf {
-    width: 73.5%;
-    padding: 22px;
+    width: 1065px;
     margin: auto;
-    background: rgba(0,0,0,.2);
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    -moz-box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
-    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
-    box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
+    background: red;
+    margin-bottom: 60px;
+    margin-top: 58px;
 }
-
-.resultBoxHeader {
-    background: #3356b7 ;
-    font-family: cursive;
-    color: white;
-    height: 49px ;
-    width: 100%;
-    letter-spacing: 1.2px;
-    line-height: 49px;
-    text-align: center;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-}
-
 
 .top-left {
-    color: white;
-    height: 500px;
-    width: 850px;
-    text-align: center;
-    display: inline-block;
-    position: relative;
-    top: 0px;
     border-radius: 2px;
-}
-
-.left-bottom {
-    top: 0px;
-    position: relative;
-    width: 30%;
-    height: 500px;
-    display: inline-block;
     color: white;
+    display: inline-block;
+    height: 500px;
+    position: relative;
+    text-align: center;
+    top: 0px;
+    width: 850px;
 }
 
 .whole {
-    display: flex;
     background: black;
+    display: flex;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(to top left , #0000ff -2%, #99ccff 144%);
+}
+
+/*    New Css   */
+
+header {
+    color: white;
+    margin-top: 24px;
+    text-align: center;
+}
+
+header .links {
+    margin-left: 855px;
+}
+
+header .logo {
+    font-family: 'Courgette', cursive;
+    font-size: 40px;
+    position: absolute;
+    left: 165px;
+}
+
+header a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    text-decoration: none;
 }
 

@@ -8,7 +8,7 @@ const passport = require('../services/auth/local');
 
 router.get('/login', (req, res) => {
   res.render('auth/log-in', {
-    messsage: 'this i sworkign too ',
+    messsage: 'this i sworkign too ', 
   });
 });
 router.get('/register', (req, res) => {

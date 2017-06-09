@@ -1,18 +1,13 @@
 <% include ../partials/boilerplate %>
 
+<% include ../partials/header %>
 
 
 
-  <header>
-
-    <a href='/auth/register'>Register</a>
-    <a href='/auth/login'>Log in</a>
-    <a href='/auth/logout'>Log out</a>
-
-  </header>
 
 
 
+<div class="divider"><span></span><span>Search</span><span></span></div>
 
   <div class="searchContainer">
 
@@ -22,9 +17,12 @@
     </form>
 
   </div>
+
+  
   <div class="resultWholeBoxContainer">
     <div class="resultWholeBox">
-
+    
+ 
       <% webmood.forEach(function(webmood) { %>
         <div class="resultEachBox">
           <div class='resultBoxHeader'> Name:

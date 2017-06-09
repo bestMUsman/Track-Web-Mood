@@ -10,6 +10,9 @@ webmoodRoutes.get('/webmood/add', authHelpers.loginRequired, (req, res) => {
     message: 'this is working',
   });
 });
+
+ 
+ 
 webmoodRoutes.get('/webmood/edit/:id', authHelpers.loginRequired, controller.edit);
 webmoodRoutes.get('/webmood/:id', controller.show);
 webmoodRoutes.post('/', authHelpers.loginRequired, controller.create);

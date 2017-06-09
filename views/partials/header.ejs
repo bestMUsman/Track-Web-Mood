@@ -1,0 +1,12 @@
+  <header>
+
+<a class='logo'>Track Web-Mood</a>
+<div class="links">
+    <a href='/auth/register'>Register</a>
+     <% if (user == undefined) { %>
+    <a href='/auth/login'>Log in</a>
+      <% } else { %>
+    <a href='/auth/logout'>Log Out</a>
+      <% } %>
+</div>
+  </header>

@@ -1,60 +1,55 @@
 <% include ../partials/boilerplate %>
+  <% include ../partials/header %>
 
-<% include ../partials/header %>
-
-
-
-
-
-
-<div class="divider"><span></span><span>Search</span><span></span></div>
-
-  <div class="searchContainer">
-
-    <form action="/getmood" class='index-cf'>
-      <input type="text" id='textBox' class='textBox' name='text' placeHolder='Type Your Text Here'>
-      <button type="submit" id='searchBttn'>Search</button>
-    </form>
-
-  </div>
-
-  
-  <div class="resultWholeBoxContainer">
-    <div class="resultWholeBox">
-    
- 
-      <% webmood.forEach(function(webmood) { %>
-        <div class="resultEachBox">
-          <div class='resultBoxHeader'> Name:
-            <%= webmood.name %>
-          </div>
-
-          <a href='/getmood?text=<%= webmood.urllink %>' class='urlLink'>
-            <div>this is id:
-              <%= webmood.id %>
-            </div>
-            <div> urllink:
-              <%= webmood.urllink %>
-            </div>
-
-
-
-            <form method='POST' action='/webmood/<%= webmood.id %>?_method=DELETE'>
-              <input type='submit' value='Delete it!' />
-            </form>
-
-            <form method='POST' action='/webmood/<%= webmood.id %>?_method=PUT'>
-              <input name='name' type='text' value='<%= webmood.name %>' />
-              <input name='urllink' type='hidden' value='<%= webmood.urllink %>' />
-
-              <input type='submit' value='Edit it!' />
-            </form>
-
-        </div>
-        </a>
-
-        <% }) %>
-
+    <div class="divider">
+      <span>
+      </span>
+      <span>Search</span>
+      <span></span>
     </div>
-  </div>
-  <% include ../partials/end %>
+
+    <div class="searchContainer">
+      <form action="/getmood" class='index-cf'>
+        <input type="text" id='textBox' class='textBox' name='text' placeHolder='Type Your Text Here'>
+        <button type="submit" id='searchBttn'>Search</button>
+      </form>
+    </div>
+
+    <div class="resultWholeBoxContainer">
+      <div class="resultWholeBox">
+        <% webmood.forEach(function(webmood) { %>
+          <div class="resultEachBox">
+            <div class='resultBoxHeader'>
+              <%= webmood.name %>
+            </div>
+
+            <div class="author">Added By:
+              <%= webmood.user_name %>
+            </div>
+
+            <div class="description">
+              <%= webmood.description %>
+            </div>
+            <div class="buttonsContainer">
+              <div class='urlLink'>
+                <a href='/getmood?text=<%= webmood.urllink %>'>
+                <button class="urlLinkBttn">Check Mood</button>
+              </a>
+              </div>
+              <div class="deleteForm">
+                <form method='POST' action='/webmood/<%= webmood.id %>?_method=DELETE'>
+                  <button class="deleteBttn">Delete</button>
+                </form>
+              </div>
+              <div class="editForm">
+                <form method='POST' action='/webmood/edit/<%= webmood.id %>?_method=GET'>
+                  <button class="editBttn">Edit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <% }) %>
+      </div>
+    </div>
+
+    <% include ../partials/end %>

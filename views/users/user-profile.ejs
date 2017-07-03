@@ -1,17 +1,10 @@
 <% include ../partials/bootstrap_boilerplate %>
 
-
-
-
 <div class="profileContainer">
-<div class="container">
-      <div class="row">
-      <div class="col-md-5  toppad  pull-right col-md-offset-3 ">
-
-      </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5  toppad  pull-right col-md-offset-3 "></div>
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
-   
-   
           <div class="panel panel-info">
             <div class="panel-heading">
               <h3 class="panel-title"><%= userInfo.first_name %> <%= userInfo.last_name %></h3>
@@ -19,8 +12,6 @@
             <div class="panel-body">
               <div class="row">
                 <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="data:image/png;base64,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" class="img-circle img-responsive"> </div>
-                
-        
                 <div class=" col-md-9 col-lg-9 "> 
                   <table class="table table-user-information">
                     <tbody>
@@ -36,33 +27,23 @@
                         <td>Last Name:</td>
                         <td><%= userInfo.last_name %></td>
                       </tr>
-                   
-                         <tr>
-                       
-                     
                       <tr>
                         <td>Email:</td>
                         <td><a href="mailto:<%= userInfo.email %>"><%= userInfo.email %></a></td>
                       </tr>
-                       
-                           
-                      </tr>
-                     
                     </tbody>
                   </table>
-                  
                   <span class="pull-right">
-                  <a href="/" class="btn btn-primary">Go To Home Page</a>
+                    <a href="/" class="btn btn-primary">Go To Home Page</a>
                   </span>
                 </div>
               </div>
             </div>
-                 <div class="panel-footer">
-                      Your Profile Information
-                    </div>
-            
+            <div class="panel-footer">
+              Your Profile Information
+            </div>
           </div>
         </div>
-      </div>
     </div>
-    </div>
+  </div>
+</div>

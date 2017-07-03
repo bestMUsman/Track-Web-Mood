@@ -1,4 +1,4 @@
-const db = require('../db/config');
+const db = require("../db/config");
 
 const Webmood = {};
 
@@ -14,10 +14,16 @@ Webmood.create = webmood => {
   return db.one(
     `
     INSERT INTO webdata
-    (urllink, name)
-    VALUES ($1, $2) RETURNING *
+    (urllink, name, description, user_id, user_name)
+    VALUES ($1, $2, $3, $4, $5) RETURNING *
     `,
-    [webmood.urllink, webmood.name]
+    [
+      webmood.urllink,
+      webmood.name,
+      webmood.description,
+      webmood.user_id,
+      webmood.user_name,
+    ]
   );
 };
 
@@ -25,11 +31,12 @@ Webmood.update = (webmood, id) => {
   return db.none(
     `
     UPDATE webdata SET
-    urllink = $1,
-    name = $2
-    WHERE id = $3
+    name = $1,
+    description = $2,
+    urllink = $3
+    WHERE id = $4
     `,
-    [webmood.urllink, webmood.name, id]
+    [webmood.name, webmood.description, webmood.urllink, id]
   );
 };
 

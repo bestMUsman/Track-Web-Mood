@@ -96,9 +96,20 @@ function getResult(urlLink, cb) {
 }
 
 app.get("/getmood", function(req, res) {
+  let userLoggedIn = false;
+  let userInfo = "";
+  if (req._passport.session !== undefined) {
+    userLoggedIn = true;
+    userInfo = req.user;
+  }
   var url = req.query.text;
   getResult(url, function(json) {
-    res.render("webmood/result", { tone: json, text: url });
+    res.render("webmood/result", {
+      tone: json,
+      text: url,
+      userLoggedIn: userLoggedIn,
+      userInfo: userInfo,
+    });
   });
 });
 

@@ -1,9 +1,52 @@
-<% include ../partials/boilerplate %>
+<% include ../partials/bootstrap_boilerplate %>
+<!--
+  <form method='POST' action='/webmood/<%= webmood.id %>?_method=PUT'>
+    <input name='name' type='text' value='<%= webmood.name %>' />
+    <input name='description' type='text' value='<%= webmood.description %>' />
+    <input name='urllink' type='hidden' value='<%= webmood.urllink %>' />
+    <input type='submit' value='Edit it!' />
+  </form>
+  <script src="/static/js/main.js"></script>
 
-<form method='POST' action='/webmood/<%= id %>?_method=PUT'>
-  <input name='name' type='text' value='<%= webmood.name %>' />
- 
-  <input type='submit' value='Edit it!' />
-</form>
-<script src="/static/js/main.js"></script>
+  
+-->
+
+
+
+
+
+<div class="edit">
+<div class="editContainer">
+
+
+<div class="panel panel-primary"> 
+<div class="panel-heading"> 
+<h3 class="panel-title">Edit Form</h3> 
+</div> 
+    <div class="well">
+        <form id="editForm" method="POST" action='/webmood/<%= webmood.id %>?_method=PUT'>
+            <div class="form-group">
+                <label for="name" class="control-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" required title="Please enter the Name" value='<%= webmood.name %>' />
+                <span class="help-block"></span>
+            </div>
+            <div class="form-group">
+                <label for="description" class="control-label">Description</label>
+                      <textarea class="form-control" rows="5" id="description" name="description" required title="Please enter the description" ><%= webmood.description %></textarea>
+
+                <!--<input type="text" class="form-control" id="description" />-->
+                <span class="help-block"></span>
+            </div>
+            <button type="submit" class="btn btn-success btn-block">Edit</button>
+        </form>
+    </div>
+    </div>
+</div>
+</div>
 <% include ../partials/end %>
+
+
+
+
+
+

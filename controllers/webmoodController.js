@@ -1,15 +1,15 @@
-const Webmood = require('../models/webmood');
+const Webmood = require("../models/webmood");
 
 const controller = {};
 
 controller.index = (req, res) => {
-let userInfo = req.user;
+  let userInfo = req.user;
   Webmood.findAll()
     .then(webmood => {
-      res.render('webmood/webmood-index', {
-        message: 'this is working',
+      res.render("webmood/webmood-index", {
+        message: "this is working",
         webmood: webmood,
-        user: userInfo,
+        userInfo: userInfo,
       });
     })
     .catch(err => {
@@ -20,7 +20,7 @@ let userInfo = req.user;
 controller.show = (req, res) => {
   Webmood.findById(req.params.id)
     .then(webmood => {
-      res.render('webmood/webmood-single', {
+      res.render("webmood/webmood-single", {
         webmood: webmood,
       });
     })
@@ -32,10 +32,13 @@ controller.show = (req, res) => {
 controller.create = (req, res) => {
   Webmood.create({
     name: req.body.name,
-    urllink: req.body.urllink,    
+    description: req.body.description,
+    urllink: req.body.urllink,
+    user_id: req.body.user_id,
+    user_name: req.body.user_name,
   })
     .then(webmood => {
-      res.redirect('/');
+      res.redirect("/");
     })
     .catch(err => {
       res.status(400).json(err);
@@ -45,7 +48,7 @@ controller.create = (req, res) => {
 controller.edit = (req, res) => {
   Webmood.findById(req.params.id)
     .then(webmood => {
-      res.render('webmood/webmood-edit', {
+      res.render("webmood/webmood-edit", {
         webmood: webmood,
         id: req.params.id,
       });
@@ -59,12 +62,13 @@ controller.update = (req, res) => {
   Webmood.update(
     {
       name: req.body.name,
+      description: req.body.description,
       urllink: req.body.urllink,
     },
     req.params.id
   )
     .then(webmood => {
-      res.redirect('/');
+      res.redirect("/");
     })
     .catch(err => {
       res.status(400).json(err);
@@ -74,7 +78,7 @@ controller.update = (req, res) => {
 controller.destroy = (req, res) => {
   Webmood.destroy(req.params.id)
     .then(() => {
-      res.redirect('/');
+      res.redirect("/");
     })
     .catch(err => {
       res.status(400).json(err);

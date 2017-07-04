@@ -7,7 +7,7 @@
 .chart {
   display: inline-block;
   width: 110px;
-  margin: 40px auto 20px;
+  margin: 40px auto 0;
   padding: 0 10px;
 }
 
@@ -45,8 +45,7 @@ sup {
   width: 100%;
   background: gray;
 }*/
-/*
-.whole {
+/*.whole {
   background: blue;
   min-width: 100%;
   text-align:center;
@@ -287,15 +286,6 @@ sup {
   width: 110px;
 }
 
-.left-bottom {
-  color: white;
-  display: inline-block;
-  height: 500px;
-  position: relative;
-  top: 0px;
-  width: 30%;
-}
-
 .links a {
   padding: 15px;
   padding-bottom: 20px;
@@ -327,17 +317,6 @@ sup {
   width: 100%;
 }
 
-.resultWholeBox {
-  margin: auto;
-  text-align: center;
-  width: 90%;
-}
-
-.resultWholeBoxContainer {
-  display: flex;
-  justify-content: center;
-}
-
 .searchContainer {
   text-align: center;
   width: 1065px;
@@ -345,22 +324,6 @@ sup {
   background: red;
   margin-bottom: 60px;
   margin-top: 58px;
-}
-
-.top-left {
-  border-radius: 2px;
-  color: white;
-  display: inline-block;
-  height: 500px;
-  position: relative;
-  text-align: center;
-  top: 0px;
-  width: 850px;
-}
-
-.whole {
-  background: black;
-  display: flex;
 }
 
 html {
@@ -395,4 +358,177 @@ header a {
   font-family: 'Roboto', sans-serif;
   font-size: 25px;
   text-decoration: none;
+}
+.resultWholeBox {
+  margin: auto;
+  text-align: center;
+  width: 85%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.resultEachBox {
+  background: #eeeeee;
+  border: 1px solid #3356b7;
+  border-radius: 18px 18px 0px 0px;
+  box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.75);
+  font-size: 20px;
+  height: 257px;
+  margin: 5px;
+  width: 350px;
+  -webkit-box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.75);
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.resultEachBox .author {
+  font-style: oblique;
+  font-size: 20px;
+  padding: 5px;
+  border-bottom: 1px dashed #c3c3c3;
+}
+
+.resultEachBox .description {
+  line-height: 1.2;
+  margin-top: 8px;
+}
+
+.resultEachBox button {
+  height: 30px;
+  cursor: pointer;
+  width: 100%;
+  background: #eaeaea;
+  border: 0.1px ridge #a8a8a8;
+}
+
+.resultEachBox button:hover {
+  border: 1px solid;
+}
+
+.buttonsContainer div {
+  flex-basis: 100%;
+}
+
+.buttonsContainer {
+  display: flex;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}
+
+.editContainer {
+  top: 12vh;
+  display: block;
+  width: 400px;
+  margin: auto;
+  position: relative;
+  zoom: 1.3;
+}
+
+.whole .label {
+  margin-top: 15px;
+}
+
+.whole {
+  background-color: black;
+  display: flex;
+  background: url('/static/images/space.jpg');
+  background-size: 70%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.radar-chart-container {
+  color: white;
+  display: inline-block;
+  height: 500px;
+  position: relative;
+  top: 0px;
+  width: 50%;
+  text-align: center;
+}
+
+.radar-chart-container canvas {
+  width: 640px;
+  height: 400px;
+  margin: 0px;
+  padding: 0;
+}
+
+.chart-demo {
+  padding: 0;
+  margin: 0;
+}
+
+.pie-chart-container {
+  border-radius: 2px;
+  color: white;
+  display: inline-block;
+  height: 500px;
+  position: relative;
+  text-align: center;
+  top: 0px;
+  width: 50%;
+}
+
+.resultsSaveForm {
+  display: none;
+}
+
+.resultsSaveBttn {
+  -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
+  -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
+  box-shadow: inset 0px 1px 0px 0px #ffffff;
+  background: linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(
+      startColorstr='#ffffff',
+      endColorstr='#f6f6f6',
+      GradientType=0
+    );
+  background-color: #ffffff;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  border: 1px solid #dcdcdc;
+  display: inline-block;
+  cursor: pointer;
+  color: #666666;
+  font-family: Arial;
+  font-size: 23px;
+  font-weight: bold;
+  padding: 17px 31px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #ffffff;
+}
+
+.resultsSaveBttn:hover {
+  background: linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(
+      startColorstr='#f6f6f6',
+      endColorstr='#ffffff',
+      GradientType=0
+    );
+  background-color: #f6f6f6;
+}
+
+.resultsSaveBttn:active {
+  position: relative;
+  top: 1px;
+}
+
+.createContainer {
+  top: 12vh;
+  display: block;
+  width: 400px;
+  margin: auto;
+  position: relative;
+  zoom: 1.3;
+}
+
+.createContainer label {
+  margin-bottom: 5px;
 }

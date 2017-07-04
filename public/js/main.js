@@ -1,26 +1,8 @@
+console.log("connected with javascript file");
+
 // ======================================================
 // Pie Chart Starts
 // ======================================================
-console.log("woking");
-
-// function changePieChartValues(joy, sadness, fear, anger, disgust) {
-//  $(".joy-percentage").attr({
-//         "data-percent" : joy
-//     });
-//   $(".sadness-percentage").attr({
-//         "data-percent" : sadness
-//     });
-//   $(".fear-percentage").attr({
-//         "data-percent" : fear
-//     });
-//   $(".anger-percentage").attr({
-//         "data-percent" : anger
-//     });
-//   $(".disgust-percentage").attr({
-//         "data-percent" : disgust
-//     });
-
-// }
 
 $(".joy-percentage").easyPieChart({
   animate: 1000,
@@ -91,9 +73,6 @@ $(".disgust-percentage").easyPieChart({
     this.$el.find("span").text(Math.round(to));
   },
 });
-
-// console.log(moodValues);
-// pie chart ends
 
 // ======================================================
 // Radar Chart
@@ -206,35 +185,17 @@ var empotionRadarOptions = {
   onAnimationComplete: null,
 };
 
-let emotionDataValues = [50, 59, 90, 81, 56];
-
-function changeRadarChartValues(joy, fear, disgust, anger, sadness) {
-  emotionDataValues[0] = joy;
-  emotionDataValues[1] = fear;
-  emotionDataValues[2] = disgust;
-  emotionDataValues[3] = anger;
-  emotionDataValues[4] = sadness;
-}
-
 let angerValue = document.getElementById("angerValue").getAttribute("data");
 let disgustValue = document.getElementById("disgustValue").getAttribute("data");
 let fearValue = document.getElementById("fearValue").getAttribute("data");
 let joyValue = document.getElementById("joyValue").getAttribute("data");
 let sadnessValue = document.getElementById("sadnessValue").getAttribute("data");
 
-// console.log('angry: ' + angerValue);
-// console.log('disgust: ' + disgustValue);
-// console.log('fear: ' + fearValue);
-// console.log('joy: ' + joyValue);
-// console.log('sadness: ' + sadnessValue);
-
-changeRadarChartValues(
-  joyValue,
-  fearValue,
-  disgustValue,
-  angerValue,
-  sadnessValue
-);
+angerValue = Number(angerValue);
+disgustValue = Number(disgustValue);
+fearValue = Number(fearValue);
+joyValue = Number(joyValue);
+sadnessValue = Number(sadnessValue);
 
 // Radar Data
 var emotionRadarData = {
@@ -243,7 +204,7 @@ var emotionRadarData = {
     {
       fillColor: "rgba(220,220,220,0.5)",
       strokeColor: "rgba(220,220,220,1)",
-      data: emotionDataValues,
+      data: [joyValue, fearValue, disgustValue, angerValue, sadnessValue],
     },
   ],
 };
@@ -259,4 +220,13 @@ var emotionRadar = new Chart(emotion).Radar(
 
 // Radar Chart Ends
 
-// console.log(JSON.stringify(tone.document_tone.tone_categories[0].tones, null, 2));
+let resultsSaveBttnContainer = document.querySelector(".resultsSaveBttnContainer");
+let resultsSaveForm = document.querySelector(".resultsSaveForm");
+let whole = document.querySelector(".whole");
+
+resultsSaveBttnContainer.addEventListener("click", function() {
+  console.log('working event listenrre');
+  
+  whole.style.display = "none";
+  resultsSaveForm.style.display = "block";
+});

@@ -113,23 +113,6 @@ app.get("/getmood", function(req, res) {
   });
 });
 
-// const fs = require('fs');
-// const screenshot = require('screenshot-stream');
-
-// const stream = screenshot('http://yahoo.com/', '1024x768', {crop: true});
-
-// stream.pipe(fs.createWriteStream('ehow-1024x768.png'));
-
-// =============================================
-
-// ================================
-//            Start
-// ================================
-
-// ================================
-//            End
-// ================================
-
 app.use("/", webmoodRoutes);
 app.use("/auth", authRoutes);
 app.use("/user", userRoutes);

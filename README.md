@@ -22,7 +22,6 @@ Track Web-Mood is an analytic dashboard app that provides clients with insights 
  - Using "Request API" a call is made to that particular website, which then gets all the HTML of that website  
  - Then "Html-To-Text" API is used to convert the HTML into a regular text
  - After the text is converted into a regular text, then it is sent to "Watson-Developer-Cloud" API
- - Each time when something is done with so a video state changes, which is detected by Youtbe API
  - "Watson-Developer-Cloud" API gets all the text and then detects the mood of that text then return the mood data in JSON format
  - Using ChartJs Library, the JSON data is displayed in Pie Charts and Radar Chart
  - Users register and then login to the website, which allows them to save that website into the database

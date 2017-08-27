@@ -7,8 +7,7 @@
 .chart {
   display: inline-block;
   width: 110px;
-  margin: 40px auto 0;
-  padding: 0 10px;
+  margin: 40px 0px 0px 10px;
 }
 
 .easyPieChart {
@@ -475,6 +474,7 @@ header a {
   text-align: center;
   top: 0px;
   width: 50%;
+  padding-top: 27px;
 }
 
 .resultsSaveForm {

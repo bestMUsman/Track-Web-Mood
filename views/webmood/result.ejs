@@ -74,48 +74,37 @@
       <a class="resultsSaveBttn">Save This</a>
     </div>
   </div>
-  <div class="resultsSaveForm">
 
-        <div class="create">
-    <div class="createContainer">
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h3 class="panel-title">Save Form</h3>
-        </div>
-        <div class="well">
-          <form id="createForm" method="POST" class="createForm" action='/'>
-            <div class="form-group">
-              <label for="name" class="control-label">Name</label>
-              <input type="text" class="form-control" id="name" name="name" required title="Please enter the Name" placeholder='Name' />
-              <span class="help-block"></span>
-            </div>
-            <div class="form-group">
-              <label for="description" class="control-label">Description</label>
-              <textarea class="form-control" rows="5" id="description" name="description" required title="Please enter the description" placeholder="Please Write Your Description Here ......." ></textarea>
-              <span class="help-block"></span>
-            </div>
-              <input name='urllink' type='hidden' value='<%= text %>' />
-              <% if (userLoggedIn == true) { %>
-              <input name='user_name' type='hidden' value='<%= userInfo.username %>' />
-              <input name='user_id' type='hidden' value='<%= userInfo.id %>' />
-              <% } %>
-            <button type="submit" class="btn btn-success btn-block">Save</button>
-          </form>
+  <div class="resultsSaveForm">
+    <div class="create">
+      <div class="createContainer">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Save Form</h3>
+          </div>
+          <div class="well">
+            <form id="createForm" method="POST" class="createForm" action='/'>
+              <div class="form-group">
+                <label for="name" class="control-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" required title="Please enter the Name" placeholder='Name' />
+                <span class="help-block"></span>
+              </div>
+              <div class="form-group">
+                <label for="description" class="control-label">Description</label>
+                <textarea class="form-control" rows="5" id="description" name="description" required title="Please enter the description" placeholder="Please Write Your Description Here ......." ></textarea>
+                <span class="help-block"></span>
+              </div>
+                <input name='urllink' type='hidden' value='<%= text %>' />
+                <% if (userLoggedIn == true) { %>
+                <input name='user_name' id='userName' type='hidden' value='<%= userInfo.username %>' />
+                <input name='user_id' type='hidden' value='<%= userInfo.id %>' />
+                <% } %>
+              <button type="submit" class="btn btn-success btn-block">Save</button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-
-      <!--<form method='POST' class="createForm" action='/' class='index-cf'>
-        <input name='name' class="name" type='text' placeholder='Name' />
-        <input name='description' class="description" type='text' placeholder='Description' />
-        <input name='urllink' type='hidden' value='<%= text %>' />
-        <% if (userLoggedIn == true) { %>
-        <input name='user_name' type='hidden' value='<%= userInfo.username %>' />
-        <input name='user_id' type='hidden' value='<%= userInfo.id %>' />
-        <% } %>
-        <button type="submit">Save This!</button>
-      </form>-->
   </div>
   <% } else { %>
     <pre class="data"><%=  JSON.stringify(tone, null, 2) %></pre>

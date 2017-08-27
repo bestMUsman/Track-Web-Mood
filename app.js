@@ -98,12 +98,17 @@ function getResult(urlLink, cb) {
 app.get("/getmood", function(req, res) {
   let userLoggedIn = false;
   let userInfo = "";
-  if (req._passport.session !== undefined) {
+  if (req._passport.session == undefined || Object.entries(req._passport.session).length == 0) {
+      userLoggedIn = false;  
+  } else {
     userLoggedIn = true;
     userInfo = req.user;
   }
-  var url = req.query.text;
+  let url = req.query.text;
   getResult(url, function(json) {
+    console.log('userLoggedIn: ', userLoggedIn);
+    console.log('req._passport.session: ', req._passport.session);
+    
     res.render("webmood/result", {
       tone: json,
       text: url,

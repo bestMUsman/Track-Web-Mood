@@ -219,14 +219,15 @@ var emotionRadar = new Chart(emotion).Radar(
 );
 
 // Radar Chart Ends
-
 let resultsSaveBttnContainer = document.querySelector(".resultsSaveBttnContainer");
 let resultsSaveForm = document.querySelector(".resultsSaveForm");
 let whole = document.querySelector(".whole");
-
+let userName = document.getElementById('userName');
 resultsSaveBttnContainer.addEventListener("click", function() {
-  console.log('working event listenrre');
-  
   whole.style.display = "none";
-  resultsSaveForm.style.display = "block";
+  if (userName !== null && userName !== undefined) {
+    resultsSaveForm.style.display = "block";  
+  } else {
+    window.location = "/auth/login"
+  }
 });

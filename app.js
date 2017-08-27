@@ -98,7 +98,7 @@ function getResult(urlLink, cb) {
 app.get("/getmood", function(req, res) {
   let userLoggedIn = false;
   let userInfo = "";
-  if (req._passport.session == undefined || Object.values(req._passport.session).length == 0) {
+  if (req._passport.session == undefined || Object.keys(req._passport.session).length == 0) {
       userLoggedIn = false;  
   } else {
     userLoggedIn = true;

@@ -39,17 +39,6 @@ sup {
 /* ============= */
 /*  Boxes */
 /* ============= */
-/*header {
-  height: 50px;
-  width: 100%;
-  background: gray;
-}*/
-/*.whole {
-  background: blue;
-  min-width: 100%;
-  text-align:center;
- 
-}*/
 
 .top-right {
   width: 300px;
@@ -91,7 +80,6 @@ sup {
 .index-cf input {
   width: 88.45%;
   height: 20px;
-  padding: 10px 5px;
   float: left;
   font: bold 15px 'lucida sans', 'trebuchet MS', 'Tahoma';
   border: 0;
@@ -100,6 +88,7 @@ sup {
   -webkit-border-radius: 3px 0 0 3px;
   border-radius: 3px 0 0 3px;
   width: 88.70%;
+  padding: 10px 0.5%;
 }
 
 .index-cf input:focus {
@@ -126,25 +115,6 @@ sup {
   color: #999;
   font-weight: normal;
   font-style: italic;
-}
-
-.index-cf button {
-  overflow: visible;
-  position: relative;
-  float: right;
-  border: 0;
-  padding: 0;
-  cursor: pointer;
-  height: 40px;
-  width: 110px;
-  font: bold 15px/40px 'lucida sans', 'trebuchet MS', 'Tahoma';
-  color: #fff;
-  text-transform: uppercase;
-  background: #d83c3c;
-  -moz-border-radius: 0 3px 3px 0;
-  -webkit-border-radius: 0 3px 3px 0;
-  border-radius: 0 3px 3px 0;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, .3);
 }
 
 .index-cf button:hover {
@@ -228,7 +198,7 @@ sup {
   margin: 40px auto;
   text-align: center;
   width: 75%;
-  margin-top: 55px;
+  margin-top: 38px;
 }
 
 .divider span {
@@ -282,7 +252,7 @@ sup {
   position: relative;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, .3);
   text-transform: uppercase;
-  width: 110px;
+  width: 10.3%;
 }
 
 .links a {
@@ -318,11 +288,10 @@ sup {
 
 .searchContainer {
   text-align: center;
-  width: 1065px;
   margin: auto;
-  background: red;
   margin-bottom: 60px;
   margin-top: 58px;
+  width: 79.7%;
 }
 
 html {
@@ -338,19 +307,22 @@ body {
 
 header {
   color: white;
-  margin-top: 24px;
-  text-align: center;
+  margin-top: 17px;
+  height: 49px;
+  line-height: 49px;
 }
 
 header .links {
-  margin-left: 855px;
+  float: right;
+  margin-right: 12.2%;
 }
 
 header .logo {
   font-family: 'Courgette', cursive;
   font-size: 40px;
-  position: absolute;
-  left: 165px;
+  float: left;
+  margin-left: 11.5%;
+  margin-top: 0.1%;
 }
 
 header a {
@@ -441,6 +413,7 @@ header a {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  overflow-x: hidden;
 }
 
 .radar-chart-container {
@@ -454,8 +427,6 @@ header a {
 }
 
 .radar-chart-container canvas {
-  width: 640px;
-  height: 400px;
   margin: 0px;
   padding: 0;
 }
@@ -534,3 +505,76 @@ header a {
 .createContainer label {
   margin-bottom: 5px;
 }
+
+/* Media Queries Starts */
+
+@media only screen and (max-width: 971px) {
+  .pie-chart-container {
+    width: inherit;
+  }
+}
+
+@media only screen and (max-width: 932px) {
+  .pie-chart-container,
+  .radar-chart-container {
+    width: 100%;
+  }
+  .pie-chart-container {
+    height: auto;
+    margin-bottom: 12px;
+  }
+  .radar-chart-container {
+    height: 434px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  header .logo {
+    float: none;
+    display: block;
+    margin: 0;
+    text-align: center;
+  }
+  header .links {
+    float: none;
+    margin: 0;
+    text-align: center;
+    margin-top: 24px;
+  }
+  .divider {
+    margin-top: 95px;
+  }
+  .index-cf input {
+    width: 85.7%;
+  }
+  .index-cf button {
+    display: none;
+  }
+  .index-cf:after {
+    content: "";
+    background-color: #d83c3c;
+    background-image: url(../images/searchIcon.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 13.3%;
+    height: 40.4px;
+    display: inline-block;
+    background-position: center;
+  }
+}
+
+@media only screen and (max-width: 631px) {
+  .radar-chart-container canvas {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 532px) {
+  .radar-chart-container {
+    height: 283px;
+  }
+  .radar-chart-container canvas {
+    height: unset !important;
+  }
+}
+/* Media Queries Ends */

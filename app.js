@@ -15,7 +15,7 @@ const webmoodRoutes = require("./routes/webmood");
 const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/users");
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3002;
 app.listen(PORT, function() {
   console.log(`working with this port: ${PORT}`);
 });
@@ -49,8 +49,8 @@ var request = require("request");
 var watson = require("watson-developer-cloud");
 var htmlToText = require("html-to-text");
 
-const api_userName = process.env.api_username;
-const api_password = process.env.api_password;
+const api_userName = "process.env.api_username";
+const api_password = "process.env.api_password";
 var tone_analyzer = watson.tone_analyzer({
   username: api_userName,
   password: api_password,
@@ -81,18 +81,40 @@ function changeHtmlToText(text, cb) {
 }
 
 function getResult(urlLink, cb) {
-  request(urlLink, function(error, response, body) {
-    console.log("error:", error); // Print the error if one occurred
-    console.log("statusCode:", response && response.statusCode); // Print the response status code if a response was received
-    // console.log('body:', body); // Print the HTML for the Google homepage.
-    if (error) {
-      // cb(error);
-      cb("Sorry The Url Is Not Valid!");
-    } else {
-      changeHtmlToText(body, cb);
-      // getMood(body, cb);
-    }
-  });
+    // mocking data since "watson tone analyzer service" has been deprecated
+    // "IBM® has announced the deprecation of the Watson™ Tone Analyzer service, with all regions affected by this deprecation. As of 24 February 2022, the Tone Analyzer tile will be removed from the IBM Cloud® Platform for new customers; only existing customers will be able to access the product. The service will no longer be available as of 24 February 2023.""
+    const mockedData = {
+            document_tone: {
+                tone_categories: [
+                    {
+                        tones: [
+                            {score: Math.random()},
+                            {score: Math.random()},
+                            {score: Math.random()},
+                            {score: Math.random()},
+                            {score: Math.random()},
+                        ]
+                    }
+                ]
+            }
+    };
+
+    cb(mockedData);
+
+    // previous code:
+
+//   request(urlLink, function(error, response, body) {
+//     console.log("error:", error); // Print the error if one occurred
+//     console.log("statusCode:", response && response.statusCode); // Print the response status code if a response was received
+//     // console.log('body:', body); // Print the HTML for the Google homepage.
+//     if (error) {
+//       // cb(error);
+//       cb("Sorry The Url Is Not Valid!");
+//     } else {
+//       changeHtmlToText(body, cb);
+//       // getMood(body, cb);
+//     }
+//   });
 }
 
 app.get("/getmood", function(req, res) {
@@ -109,6 +131,8 @@ app.get("/getmood", function(req, res) {
     console.log('userLoggedIn: ', userLoggedIn);
     console.log('req._passport.session: ', req._passport.session);
     
+
+    console.log(`json data`, json);
     res.render("webmood/result", {
       tone: json,
       text: url,

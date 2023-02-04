@@ -5,6 +5,7 @@ function comparePass(userPassword, databasePassword) {
 }
 
 function loginRequired(req, res, next) {
+    console.log(`req.user`, req.user);
   if (!req.user) {
     return res.redirect('/auth/login');
   }

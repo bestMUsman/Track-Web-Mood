@@ -4,8 +4,11 @@ const controller = {};
 
 controller.index = (req, res) => {
   let userInfo = req.user;
+  console.log(`getting data`, userInfo);
   Webmood.findAll()
     .then(webmood => {
+
+        console.log(`thse are webmoode`, webmood);
       res.render("webmood/webmood-index", {
         message: "this is working",
         webmood: webmood,

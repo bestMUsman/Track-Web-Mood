@@ -6,6 +6,7 @@ const webmoodRoutes = express.Router();
 
 webmoodRoutes.get('/', controller.index);
 webmoodRoutes.get('/webmood/add', authHelpers.loginRequired, (req, res) => {
+    console.log(`working saved`);
   res.render('webmood/webmood-add', {
     message: 'this is working',
   }); 

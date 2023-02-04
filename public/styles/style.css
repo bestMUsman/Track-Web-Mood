@@ -228,8 +228,18 @@ sup {
   color: white;
   padding: 0px 25px;
   text-transform: uppercase;
-  white-space: nowrap;
+  /* white-space: nowrap; */
   width: auto;
+}
+
+.dividerForNote {
+    display: flex;
+}
+
+.dividerForNote span {
+    color: white !important;
+    font-weight: 800;
+    text-transform: unset !important;
 }
 
 .index-cf {
@@ -578,3 +588,4 @@ header a {
   }
 }
 /* Media Queries Ends */
+

@@ -3,7 +3,7 @@
 
 Welcome to Track Web Mood!
 =====================
-![alt text](https://github.com/musmanrao1994/Track-Web-Mood/blob/master/WebMood.png?raw=true)
+![alt text](https://github.com/musmanraoDev/Track-Web-Mood/blob/master/WebMood.png?raw=true)
 
 
 ## What does it do?  
